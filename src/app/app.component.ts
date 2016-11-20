@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title: String = 'Podsicle';
+  podcastUrl: String = 'http://feeds.99percentinvisible.org/99percentinvisible';
+
+  retrievePodcast(podcastUrl: String ) {
+    this.podcastUrl = podcastUrl;
+  }
 }

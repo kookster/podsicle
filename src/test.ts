@@ -1,3 +1,4 @@
+/// <reference path="../node_modules/@types/jasmine/index.d.ts"/>
 import './polyfills.ts';
 
 import 'zone.js/dist/long-stack-trace-zone';

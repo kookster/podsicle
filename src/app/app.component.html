@@ -1,3 +1,45 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-layout>
+
+  <md-sidenav #sidenav mode="side" class="app-sidenav">
+    Sidenav
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+
+    <i class="material-icons app-input-icon">radio</i> {{title}}
+
+    <span class="app-toolbar-filler"></span>
+  </md-toolbar>
+
+  <div class="app-content">
+
+    <md-card class="app-retrieve-feed">
+      <md-input #feedUrlInput placeholder="RSS Feed URL" style="width: 100%" value="{{podcastUrl}}">
+        <span md-prefix>
+          <i class="material-icons app-input-icon">rss_feed</i>
+        </span>
+      </md-input>
+      <div>
+        <button
+          (click)="retrievePodcast(feedUrlInput.value)"
+          md-raised-button
+          color="primary"
+          md-tooltip="Retrieve the RSS feed">
+            Retrieve
+        </button>
+      </div>
+    </md-card>
+
+    <md-card>
+      <app-podcast [feedUrl]="podcastUrl"></app-podcast>
+    </md-card>
+  </div>
+
+</md-sidenav-layout>
+
+<span class="app-action">
+  <button md-fab><md-icon>check circle</md-icon></button>
+</span>
